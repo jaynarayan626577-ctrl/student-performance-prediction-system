@@ -1,0 +1,7 @@
+{% extends 'base.html' %}{% block title %}Student Details{% endblock %}
+{% block content %}
+<div class="card"><div class="detail-head"><h1>{{ student.name }}</h1><span class="badge">{{ student.risk() }}</span></div>
+<div class="detail-grid">
+<div><b>Attendance</b><span>{{ student.attendance }}%</span></div><div><b>Assignment</b><span>{{ student.assignment }}%</span></div><div><b>Internal</b><span>{{ student.internal_marks }}%</span></div><div><b>Previous</b><span>{{ student.previous_marks }}%</span></div><div><b>Study Hours</b><span>{{ student.study_hours }}</span></div><div><b>Predicted Marks</b><span>{{ student.predicted_marks }}%</span></div><div><b>Final Marks</b><span>{{ student.final_marks if student.final_marks is not none else 'Not entered' }}</span></div><div><b>Warning</b><span>{{ warning_for(student.score()) }}</span></div>
+</div><div class="actions"><a class="button" href="{{ url_for('edit_student', student_id=student.id) }}">✏️ Edit</a><a class="button secondary" href="{{ url_for('dashboard') }}">← Dashboard</a></div></div>
+{% endblock %}

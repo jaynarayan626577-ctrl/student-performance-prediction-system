@@ -1,0 +1,21 @@
+{% extends 'base.html' %}{% block title %}Predict Student{% endblock %}
+{% block content %}
+<div class="hero"><h1>🎓 Student Performance Prediction</h1><p>Early Warning System • Predict, save and monitor students automatically</p></div>
+<div class="card narrow">
+<h2>🔮 Predict & Save Student</h2>
+<form action="{{ url_for('predict') }}" method="post" class="grid-form">
+<label>Student Name<input name="name" required></label>
+<label>Attendance (%)<input type="number" name="attendance" min="0" max="100" step="0.1" required></label>
+<label>Assignment Score (%)<input type="number" name="assignment" min="0" max="100" step="0.1" required></label>
+<label>Internal Marks (%)<input type="number" name="internal_marks" min="0" max="100" step="0.1" required></label>
+<label>Previous Marks (%)<input type="number" name="previous_marks" min="0" max="100" step="0.1" required></label>
+<label>Study Hours / Day<input type="number" name="study_hours" min="0" max="24" step="0.5" required></label>
+<div class="full"><button>Predict Performance & Save</button></div>
+</form>
+</div>
+<div class="quick-grid">
+<a class="quick" href="{{ url_for('dashboard') }}">📊 Open Dashboard</a>
+<a class="quick" href="{{ url_for('add_student') }}">➕ Add Student</a>
+<a class="quick" href="{{ url_for('import_students') }}">📁 Import Many Students</a>
+</div>
+{% endblock %}

@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block title %}Prediction Result{% endblock %}
+{% block content %}
+<div class="card result-card"><h1>📊 Prediction Result</h1><h2>{{ student.name }}</h2><div class="big-score">{{ prediction }}%</div><div class="risk {{ risk|lower|replace(' ','-') }}">{{ risk }}</div><p>{{ message }}</p><div class="actions"><a class="button" href="{{ url_for('dashboard') }}">Dashboard</a><a class="button secondary" href="{{ url_for('add_student') }}">Add Another</a></div></div>
+{% endblock %}

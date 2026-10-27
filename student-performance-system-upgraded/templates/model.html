@@ -1,0 +1,6 @@
+{% extends 'base.html' %}{% block title %}ML Model{% endblock %}
+{% block content %}
+<div class="card narrow"><h1>🤖 Machine Learning Model</h1><p><b>Algorithm:</b> Random Forest Regressor</p><p><b>Input features:</b> Attendance, Assignment, Internal Marks, Previous Marks, Study Hours</p><p><b>Students with actual final marks:</b> {{ training_students }}</p><p><b>Model file:</b> {{ 'Ready' if model_file else 'Will be created automatically' }}</p>
+<form method="post" action="{{ url_for('retrain') }}"><button>🔄 Retrain Model From Saved Data</button></form>
+<p class="muted">Add actual final marks for students, then retrain to update the model.</p></div>
+{% endblock %}

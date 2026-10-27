@@ -1,0 +1,12 @@
+{% extends 'base.html' %}{% block title %}Bulk Import{% endblock %}
+{% block content %}
+<div class="card narrow"><h1>📁 Bulk Student Import</h1><p>Upload one CSV containing many students. No code changes are required.</p>
+<form method="post" enctype="multipart/form-data">
+<input type="file" name="file" accept=".csv" required><button>Upload & Import</button>
+</form>
+<h3>Required columns</h3>
+<code>name, attendance, assignment, internal_marks, previous_marks, study_hours</code>
+<p><b>Optional:</b> final_marks</p>
+<p class="muted">Your original students.csv is already imported automatically on first run.</p>
+</div>
+{% endblock %}

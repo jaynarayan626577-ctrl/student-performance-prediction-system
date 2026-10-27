@@ -1,0 +1,13 @@
+{% extends 'base.html' %}{% block title %}Login{% endblock %}
+{% block content %}
+<div class="auth-card">
+    <h1>🔐 Teacher / Admin Login</h1>
+    <p>Manage students, predictions and analytics from one place.</p>
+    <form method="post">
+        <label>Username</label><input name="username" required autofocus>
+        <label>Password</label><input type="password" name="password" required>
+        <button>Login</button>
+    </form>
+    <div class="hint"><b>First login:</b> admin / admin123</div>
+</div>
+{% endblock %}
